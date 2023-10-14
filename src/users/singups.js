@@ -6,9 +6,9 @@ function singups() {
     const [name, setName] = useState("")
 
     function handleform(e) {
-        const main = new Users();
+        const main = new index();
         const formdata = { password, name, username, confirmpasword, email, phone }
-        const response = main.register(formdata);
+        const response = main.fetchsignup(formdata);
         response.then((res) => {
             if (res.data.status) {
                 toast.success(res && res.data && res.data.msg);
