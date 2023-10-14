@@ -7,7 +7,7 @@ class signup extends Component{
         return Api.post('/singup', form)
     }
     async login(form){ 
-        return Api.post('regapi/login', form)
+        return Api.post('/login', form)
     }
     
     

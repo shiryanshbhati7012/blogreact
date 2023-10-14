@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Api from "../api/Api";
 
 function singups() {
       const [username, setUsername] = useState("")
@@ -6,9 +7,9 @@ function singups() {
     const [name, setName] = useState("")
 
     function handleform(e) {
-        const main = new index();
-        const formdata = { password, name, username, confirmpasword, email, phone }
-        const response = main.fetchsignup(formdata);
+        const main = new Api();
+        const formdata = { name,password,email }
+        const response = main.register(formdata);
         response.then((res) => {
             if (res.data.status) {
                 toast.success(res && res.data && res.data.msg);
